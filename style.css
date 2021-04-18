@@ -1,0 +1,8 @@
+body {
+ background-image: url("https://cryptologos.cc/logos/avalanche-avax-logo.png"), url(avalanche-logo.png);
+ background-color: gold; /* Used if the image is unavailable */
+ background-position: center; /* Center the image */
+ background-repeat: repeat-y; /* Do not repeat the image. */
+ background-size: 10%; /* Resize the background image */
+ color: rgb(61, 72, 68); /* Text color */
+}
