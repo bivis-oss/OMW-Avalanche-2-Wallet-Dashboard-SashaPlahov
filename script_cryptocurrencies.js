@@ -1,13 +1,11 @@
 // Set your API key here
-const APIKEY = 'onemillionwallets';
+ APIKEY = 'ckey_d81ab58d3ef748dba534888bbc1';
 
 function getData() {
   // Get key HTML elements and reset table content
   const ul = document.getElementById('metadata');
-  const tableRef = document.getElementById('tokenTable').getElementsByTagName('tbody')[0];
+  const tableRef = document.getElementById('tokenTable2').getElementsByTagName('tbody')[0];
   tableRef.innerHTML = "";
-
-  total_balance = 0;
 
   // Covalent API request setup
   const address = document.getElementById('address').value || 'demo.eth';
@@ -34,19 +32,20 @@ function getData() {
         } else {
           balance = parseInt(token.balance);
         }
+        if(token.type=="cryptocurrency")
+        {
         tableRef.insertRow().innerHTML =
           `<td><img src=${token.logo_url} style=width:50px;height:50px;></td>` +
           `<td> ${token.contract_name} </td>` +
           `<td> ${token.contract_ticker_symbol} </td>` +
           `<td> ${balance.toFixed(4)} </td>` +
-          `<td> $${parseFloat(token.quote).toFixed(2)} </td>` +
-          `<td> ${token.type} </td>`;
+          `<td> $${parseFloat(token.quote).toFixed(2)} </td>`;
+        }
 
-
-        //total_balance = total_balance + 1;
-
-        //tableRef.insertRow().innerHTML = 
-        //    `<td> ${total_balance} </td>`;
-        //)
       })
     })
+
+
+    getData_port_balance();
+
+}
